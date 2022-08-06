@@ -30,8 +30,17 @@ function criarLista() {
   btnSubmit.addEventListener('click', function (event) {
     event.preventDefault();
     let novaLi = document.createElement('li');
-    novaLi.innerText = 'Reserva para o dia ' + getData(checkin.value) + ' até o dia ' + getData(checkout.value) + ' Quarto ' + getQuarto() + ' - Para x Pessoas - Obs: xxxx Obs: xxxxxx'
+    novaLi.innerText = 'Reserva para o dia ' + getData(checkin.value) + ' até o dia ' + getData(checkout.value) + ' Quarto ' + getQuarto() + ' - Para '+ getPessoas() + ' Pessoas - Obs: ' + textArea.value
     ol.appendChild(novaLi);
   });
 }
 criarLista();
+
+function clear() {
+  btnClear.addEventListener('click', function () {
+    while (ol.firstChild) {
+      ol.removeChild(ol.firstChild)
+    }
+  });
+}
+clear();
