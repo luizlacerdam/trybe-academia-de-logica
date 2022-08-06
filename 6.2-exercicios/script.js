@@ -6,6 +6,8 @@ const textArea = document.querySelector('.obs');
 const btnSubmit = document.querySelector('#submit-btn');
 const btnClear = document.querySelector('#clear-btn');
 const ol = document.querySelector('ol');
+//let storage = localStorage;
+let index = 0;
 
 function getQuarto() {
   for (let i = 0; i < bedroom.length; i++) {
@@ -26,12 +28,17 @@ function getData(value) {
   return dataFormatada;
 }
 
+function salvarLista(key,valor) {
+  localStorage.setItem(key,valor);
+}
+
 function criarLista() {
   btnSubmit.addEventListener('click', function (event) {
     event.preventDefault();
     let novaLi = document.createElement('li');
     novaLi.innerText = 'Reserva para o dia ' + getData(checkin.value) + ' até o dia ' + getData(checkout.value) + ' Quarto ' + getQuarto() + ' - Para '+ getPessoas() + ' Pessoas - Obs: ' + textArea.value
     ol.appendChild(novaLi);
+    salvarLista(index += 1,novaLi.innerText);
   });
 }
 criarLista();
@@ -41,6 +48,22 @@ function clear() {
     while (ol.firstChild) {
       ol.removeChild(ol.firstChild)
     }
+    localStorage.clear();
   });
 }
 clear();
+
+function listaSalva() {
+  if (localStorage.length > 0) {
+    for (let i = 1; i <= localStorage.length; i+= 1) {
+      let novaLi = document.createElement('li');
+      novaLi.innerText = localStorage[i];
+      ol.appendChild(novaLi);
+    }
+  }
+}
+
+
+window.onload = function () {
+  listaSalva();
+}
