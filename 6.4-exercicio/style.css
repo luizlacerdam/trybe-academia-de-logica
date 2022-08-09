@@ -1,0 +1,119 @@
+*{
+  padding: 0%;
+  margin: 0%;
+}
+
+body{
+  text-align: center;
+  background-color: rgb(104, 169, 126);
+}
+
+main{
+  display: inline-block;
+  border: black solid 1px;
+  display: flex;
+  padding: 30px 0px 30px 0px;
+  background-color: white;
+  width: 80%;
+  justify-content: space-around;
+}
+
+#section-center {
+  display: flex;
+  justify-content: center;
+  
+}
+
+h2 {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#section-header {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.header-trybe{
+  display: block;
+  text-align: center;
+  height: 130px;
+  border: 1px solid black;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 80%;
+}
+
+.header-trybe img{
+  margin-top: 12px;
+  height: 70px;
+  padding-right: 25px;
+}
+
+h1 {
+  color: rgb(104, 169, 126);
+}
+
+.form-section {
+  text-align: left;
+  margin: 25px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.hotel-form, .list-section{
+  margin: 25px;
+  color: rgb(73, 73, 73);
+  font-size: 25px;
+}
+
+
+
+button{
+  width: 30%;
+  padding: 20px;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+li{
+  text-align: left;
+  margin-bottom: 5px;
+  padding:10px;
+  font-size:25px;
+  border: black 1px solid;
+}
+
+ol{
+  display: inline-block;
+  list-style-type: none;
+  margin-top:15px;
+  width: 90%;
+}
+
+textarea{
+  box-sizing: content-box;
+  padding: 10px;
+}
+
+.list-section {
+  display: flex;
+  flex-direction: column;
+}
+
+#reservar-center {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.btn-cor {
+  background-color: rgb(104, 169, 126);
+  color: white;
+}
