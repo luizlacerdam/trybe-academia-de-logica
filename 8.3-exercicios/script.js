@@ -49,13 +49,16 @@ const techProducts = [
 */
 
 // requsito 1
-const evens = (arr) => arr.filter((element) => element.id % 2 === 0)
+const evens = (arr) => arr.filter((element) => element.id % 2 === 0);
 
 
 // requisito 2
-const aboveThreeHd = (arr) => arr.some((element) => element.price > 300)
+const aboveThreeHd = (arr) => arr.some((element) => element.price > 300);
 
 
 // requisito 3
 const getTotal = (id, qtd) => techProducts.find((element) => element.id = id).price * qtd;
-console.log(getTotal(1,2));
+
+// requisito 4
+const getPrices = (price) => techProducts.filter((element) => element.price === price);
+console.log(getPrices(216));
