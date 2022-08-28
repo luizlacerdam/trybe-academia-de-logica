@@ -47,3 +47,7 @@ const techProducts = [
 * 4 - // Crie um algoritmo que dado um preço retorne todos os produtos com preços iguais 
 // ex: id: 8 e quantidade: 2 preço total: 432
 */
+
+// requsito 1
+const evens = (arr) => arr.filter((element) => element.id % 2 === 0)
+console.log(evens(techProducts));
