@@ -50,4 +50,8 @@ const techProducts = [
 
 // requsito 1
 const evens = (arr) => arr.filter((element) => element.id % 2 === 0)
-console.log(evens(techProducts));
+
+
+// requisito 2
+const aboveThreeHd = (arr) => arr.some((element) => element.price > 300)
+console.log(aboveThreeHd(techProducts));
