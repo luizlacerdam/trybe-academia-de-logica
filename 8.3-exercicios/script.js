@@ -54,4 +54,8 @@ const evens = (arr) => arr.filter((element) => element.id % 2 === 0)
 
 // requisito 2
 const aboveThreeHd = (arr) => arr.some((element) => element.price > 300)
-console.log(aboveThreeHd(techProducts));
+
+
+// requisito 3
+const getTotal = (id, qtd) => techProducts.find((element) => element.id = id).price * qtd;
+console.log(getTotal(1,2));
