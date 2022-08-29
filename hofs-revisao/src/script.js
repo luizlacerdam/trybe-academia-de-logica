@@ -22,4 +22,44 @@ const mediaIdadeClasse = ({classes, fighters}) => {
   });
 };
 
-console.log(mediaIdadeClasse(data));
+// console.log(mediaIdadeClasse(data));
+
+// requisito 3
+const getResultFight = (fighterName, fightersStats, DragonStatus) => {
+  const fighterAttack = fightersStats.attack;
+  const fighterHp = fightersStats.hp;
+  const dragonAttack = DragonStatus.attack;
+  const dragonHp = DragonStatus.hp;
+
+  if (fighterAttack >= dragonHp && dragonAttack >= fighterHp) {
+    return 'Derrota o dragão e não sobrevive';
+  }
+
+  if (fighterAttack <= dragonHp && dragonAttack >= fighterHp) {
+    return `Não derrota o dragão e não sobrevive. O dragão sai com ${
+      dragonHp - fighterAttack
+    } de hp`;
+  }
+
+  if (fighterAttack >= dragonHp && dragonAttack <= fighterHp) {
+    return `Derrota o dragão e sobrevive. ${fighterName} sai com ${
+      fighterHp - dragonAttack
+    } de hp`;
+  }
+
+  if (fighterAttack < dragonHp && dragonAttack < fighterHp) {
+    return `Não derrota o dragão e sobrevive. ${fighterName} sai com ${
+      fighterHp - dragonAttack
+    } de hp e o dragão com ${dragonHp - fighterAttack} de hp`;
+  }
+};
+
+const handleDragon = ({ theMightyHofDragon, fightersStats }) => {
+  return Object.keys(fightersStats).map((lutador) => {
+    return {
+      [lutador]: getResultFight(lutador, fightersStats[lutador], theMightyHofDragon)
+    };
+  });
+};
+
+console.log(handleDragon(data));
