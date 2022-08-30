@@ -4,7 +4,7 @@ const data = require('./data');
 
 const usaFilter = () => {
   const bandas = data.bands;
-  return bandas.filter((elemento) => elemento.country === 'United States')
+  return bandas.filter((elemento) => elemento.country === 'United States');
 }
 console.log(usaFilter());
 module.exports = usaFilter;
